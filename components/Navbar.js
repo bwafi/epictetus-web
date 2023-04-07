@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
+import Container from './Container';
 
 export default function Navbar() {
   const [dropDown, setDropDown] = useState(false);
@@ -13,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="py-9">
-      <div className="container mx-auto">
+      <Container>
         <div className="flex text-white items-center">
           <div className="w-2/12 flex items-center text-lg cursor-pointer">
             <div className="w-9 h-9 mr-2 bg-gray-500 text-lg rounded flex items-center justify-center shadow-2xl">
@@ -66,7 +67,7 @@ export default function Navbar() {
             <Image src="/svg/search.svg" width={15} height={15} alt="svg icon" className="absolute left-4" />
           </div>
         </div>
-      </div>
+      </Container>
     </nav>
   );
 }

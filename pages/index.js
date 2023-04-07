@@ -1,22 +1,13 @@
 import CardPost from '@/components/CardPost';
+import Container from '@/components/Container';
 import FeaturedPost from '@/components/FeaturedPost';
-import Navbar from '@/components/Navbar';
+import Layout from '@/components/Layout';
 import Head from 'next/head';
 import { useState } from 'react';
+import mockPost from '/utils/posts.json';
 
 export default function Home() {
-  const [posts, setPosts] = useState([
-    {
-      ategory: 'UI DESIGN',
-      date: 'July 2, 2021',
-      title: 'Understanding color theory: the color wheel and finding ,complementary colors',
-      shortDescription:
-        'Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip deserunt reprehenderit elit laborum.',
-      authorAvatar: '',
-      authorName: 'Leslie Alexander',
-      authorJob: 'UI Designer',
-    },
-  ]);
+  const [posts, setPosts] = useState(mockPost);
 
   return (
     <>
@@ -26,17 +17,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-gradient-to-b from-gray-600 to-gray-900 min-h-screen">
-        <Navbar />
-        <div className="container mx-auto">
+      <Layout>
+        <Container>
           <FeaturedPost />
-          <div className="fle">
-            <div className="w-4/12">
-              <CardPost />
-            </div>
+          <div className="flex flex-wrap md:mt-14 mt-4">
+            {posts.map((post) => (
+              <div className="md:w-4/12 px-4 mt-5 w-full" key={post.id}>
+                <CardPost {...post} />
+              </div>
+            ))}
           </div>
-        </div>
-      </div>
+        </Container>
+      </Layout>
     </>
   );
 }

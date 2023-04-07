@@ -15,7 +15,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-patrick)'],
+        sans: ['var(--font-patrick)', ...fontFamily.sans],
       },
     },
   },
