@@ -5,9 +5,15 @@ import InfoPost from './InfoPost';
 export default function FeaturedPost() {
   return (
     <article>
-      <div className="flex text-white md:flex-nowrap flex-wrap">
+      <div className="flex text-white items-start lg:items-center md:flex-nowrap flex-wrap">
         <div className="flex lg:w-8/12 md:w-8/12 w-full px-4">
-          <Image src="/featured.jpg" alt="Hero image" width={500} height={500} className="rounded-xl w-full" />
+          <Image
+            src="/featured.jpg"
+            alt="Hero image"
+            width={500}
+            height={500}
+            className="rounded-xl w-full mt-6 lg:mt-0"
+          />
         </div>
         <div className="lg:w-4/12 md:w-5/12 px-4 w-full">
           <InfoPost

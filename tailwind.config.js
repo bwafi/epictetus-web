@@ -1,4 +1,3 @@
-const { default: plugin } = require('tailwindcss');
 const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
@@ -16,6 +15,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-patrick)', ...fontFamily.sans],
+      },
+      backgroundImage: {
+        search: 'url("/svg/search.svg")',
       },
     },
   },

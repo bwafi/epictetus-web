@@ -20,7 +20,7 @@ export default function Home() {
       <Layout>
         <Container>
           <FeaturedPost />
-          <div className="flex flex-wrap md:mt-14 mt-4">
+          <div className="flex flex-wrap md:mt-14 mt-4 border-t-2 border-white/10">
             {posts.map((post) => (
               <div className="md:w-4/12 px-4 mt-5 w-full" key={post.id}>
                 <CardPost {...post} />
