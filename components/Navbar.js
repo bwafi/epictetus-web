@@ -30,12 +30,14 @@ export default function Navbar() {
               </svg>
             </button>
           </div>
-          <div className="lg:w-2/12 w-6/12 flex items-center text-lg cursor-pointer lg:justify-start  justify-center">
-            <div className="w-9 h-9 mr-2 bg-gray-500 text-lg rounded flex items-center justify-center shadow-2xl">
-              E
+          <Link href={'/'} className="lg:w-2/12 w-6/12">
+            <div className="flex items-center text-lg cursor-pointer lg:justify-start  justify-center">
+              <div className="w-9 h-9 mr-2 bg-gray-500 text-lg rounded flex items-center justify-center shadow-2xl">
+                E
+              </div>
+              Epictetus
             </div>
-            Epictetus
-          </div>
+          </Link>
           <div className="w-3/12 lg:hidden text-right">
             <button
               onClick={() => {
@@ -97,14 +99,14 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="/posts" className="hover:underline">
                   Front-end
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <Link href="/posts" className="hover:underline">
                   Back-end
-                </a>
+                </Link>
               </li>
               <li className="relative">
                 <a className="hover:underline cursor-pointer flex items-center" onClick={() => setDropDown(!dropDown)}>
@@ -126,7 +128,7 @@ export default function Navbar() {
             </ul>
           </div>
           <div
-            className={`lg:w-3/12 w-full lg:px-0 lg:static absolute left-0 transition-transform items-center flex justify-center lg:translate-y-0 ${
+            className={`lg:w-3/12 w-full lg:px-0 lg:static absolute px-16 left-0 transition-transform items-center flex justify-center lg:translate-y-0 ${
               search ? 'top-13' : '-translate-y-20'
             }`}>
             <input

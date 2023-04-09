@@ -4,11 +4,15 @@ import Container from '@/components/Container';
 import CardPost from '@/components/CardPost';
 import SectionHeader from '@/components/SectionHeader';
 import mackPost from '/utils/posts.json';
+import Head from 'next/head';
 
 export default function Posts() {
   const [posts, setPosts] = useState(mackPost);
   return (
     <Layout>
+      <Head>
+        <title>Posts &mdash; Epictetus</title>
+      </Head>
       <Container>
         <SectionHeader />
         {!posts.length ? (

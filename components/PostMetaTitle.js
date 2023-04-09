@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function PostMetaTitle({ category, date, title, center }) {
@@ -8,7 +9,9 @@ export default function PostMetaTitle({ category, date, title, center }) {
         <span>&bull;</span>
         <div>{date}</div>
       </div>
-      <h2 className={`text-2xl mt-4 text-white ${center ? 'text-center' : ''}`}>{title}</h2>
+      <h2 className={`text-2xl mt-4 text-white ${center ? 'text-center' : ''}`}>
+        <Link href={'/detail'}>{title}</Link>
+      </h2>
     </>
   );
 }
